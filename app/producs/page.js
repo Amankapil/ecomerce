@@ -37,6 +37,7 @@ export default function Products() {
       const updatedCart = [...existingCart, item];
       localStorage.setItem("cart", JSON.stringify(updatedCart));
       console.log("Item added to localStorage cart:", item);
+      alert("Item added to cart")
     } else {
       console.log("Item already exists in cart. Skipping duplicate.");
     }
@@ -93,6 +94,7 @@ export default function Products() {
           <p>Price: ${item.price}</p>
           <p>Category: {item.category}</p>
           <p>Stock: {item.stock}</p>
+          <p>description: {item?.description || "description not available"} </p>
 
           <div className="mt-2 flex gap-2">
             <button
